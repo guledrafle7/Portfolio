@@ -147,13 +147,22 @@ function main(){
         ],
         duration:800,
     })
+}
+
+function faceover(){
+    anime({
+        targets:'.bodys',
+        easing:'easeOutSine',
+        scale:1.3,
+        borderRadius:20,
+    })
+        
     anime({
         targets:'.eyelefts',
         easing:'easeInSine',
-        loop:true,
-        delay:1500,
+        delay:950,
         keyframes:[
-            
+            {scaleY:1 , scaleX:1},
             {scaleY:.15, scaleX:1.5},
             {scaleY:1 , scaleX:1},
             {scaleY:.15 , scaleX:1.5},
@@ -165,9 +174,9 @@ function main(){
     anime({
         targets:'.eyerights',
         easing:'easeInSine',
-        loop:true,
-        delay:1500,
+        delay:950, 
         keyframes:[
+            {scaleY:1 , scaleX:1},
             {scaleY:.15, scaleX:1.5},
             {scaleY:1 , scaleX:1},
             {scaleY:.15 , scaleX:1.5},
@@ -177,3 +186,15 @@ function main(){
         duration: 400,
     })
 }
+
+function faceoff(){
+    anime({
+        targets:'.bodys',
+        keyframes:[
+            {scale:.8 , borderRadius:4},
+            {scale:1, borderRadius:4},
+        ],
+    })
+}
+
+
