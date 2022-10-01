@@ -3,7 +3,8 @@ let loader = document.getElementsByClassName('loader');
 let overflowswitch = document.querySelector('body');
 
 function loaderanim(){
-    
+    overflowswitch.style.overflow = 'hidden';
+    console.log("hidden");
     let t1 = anime.timeline({
         duration:750
     });
@@ -110,17 +111,19 @@ function loaderanim(){
         duration:800,
         complete: function(anime){
             loader[0].style.display = 'none';
+            overflowswitch.style.overflow = 'visible';
+            console.log("visable");
             console.log("done");
             main();
         }
     
     })
     
+    
+    
 }
 loaderanim();
-overflowswitch.style.overflow = 'visable';
 function main(){
-    
     anime({
         targets:'.bodys ',
         keyframes:[

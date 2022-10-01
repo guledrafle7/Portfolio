@@ -4,7 +4,7 @@
 }
 
 :root{
-    --main-colour:#2e347f;
+    --main-colour:black;
     --sec-colour:#efe7fb;
     --third-colour:#716d95;
 }
@@ -13,11 +13,10 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: green;
+    overflow-x: hidden;
     
 
     .container{
@@ -27,22 +26,66 @@ body{
         overflow-x: hidden;
         section{
             display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
+            position: relative;
+            
 
         &:nth-of-type(1){
-            
-            background-color: yellow;
-            color: black;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: green;
+            // background-color: rgb(19, 18, 18);
+            color: white;
             
         }
         &:nth-of-type(2){
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding:0;
+            .face{
+                position:absolute;
+                top: 10%;
+                scale:10;
+                    .bodycenter{
+                        width: 3.5em;
+                        height: 3.5em;
+                        border: .5em solid var(--sec-colour);
+                        background:transparent;
+                        position: relative;
+                        display: flex;
+                        opacity: .3;
+                        border-radius: 4px;
+                        
+                        .eyeleftcenter{
+                            width: .45rem;
+                            height: 1rem;
+                            background-color: var(--sec-colour);
+                            position: absolute;
+                            top: .5rem;
+                            left: 25%;
+                            opacity: 1;
+                        }
+                        .eyerightcenter{
+                            width: .45rem;
+                            height: 1rem;
+                            background-color: var(--sec-colour);
+                            position: absolute;
+                            top: .5rem;
+                            left: 60%;
+                            opacity: 1;
+                        }
+                    }
+                }
             background-color: orange;
             color: teal;
         }
         &:nth-of-type(3){
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
             background-color: red;
             color: white;
         }
@@ -128,7 +171,7 @@ body{
                 background-color: var(--main-colour);
                 font-family: Consolas;
                 width: 100%;
-            
+                margin: 0 25% 0 25%;
     
                 
                 .logo{ 

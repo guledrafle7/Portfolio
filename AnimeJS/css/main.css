@@ -3,7 +3,7 @@
   src: url(fonts/Consolas);
 }
 :root {
-  --main-colour:#2e347f;
+  --main-colour:black;
   --sec-colour:#efe7fb;
   --third-colour:#716d95;
 }
@@ -13,11 +13,10 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: green;
+  overflow-x: hidden;
 }
 body .container {
   width: 100%;
@@ -27,20 +26,62 @@ body .container {
 }
 body .container section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
 }
 body .container section:nth-of-type(1) {
-  background-color: yellow;
-  color: black;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: white;
 }
 body .container section:nth-of-type(2) {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: orange;
   color: teal;
 }
+body .container section:nth-of-type(2) .face {
+  position: absolute;
+  top: 10%;
+  scale: 10;
+}
+body .container section:nth-of-type(2) .face .bodycenter {
+  width: 3.5em;
+  height: 3.5em;
+  border: 0.5em solid var(--sec-colour);
+  background: transparent;
+  position: relative;
+  display: flex;
+  opacity: 0.3;
+  border-radius: 4px;
+}
+body .container section:nth-of-type(2) .face .bodycenter .eyeleftcenter {
+  width: 0.45rem;
+  height: 1rem;
+  background-color: var(--sec-colour);
+  position: absolute;
+  top: 0.5rem;
+  left: 25%;
+  opacity: 1;
+}
+body .container section:nth-of-type(2) .face .bodycenter .eyerightcenter {
+  width: 0.45rem;
+  height: 1rem;
+  background-color: var(--sec-colour);
+  position: absolute;
+  top: 0.5rem;
+  left: 60%;
+  opacity: 1;
+}
 body .container section:nth-of-type(3) {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
   background-color: red;
   color: white;
 }
@@ -114,6 +155,7 @@ body header .navbar {
   background-color: var(--main-colour);
   font-family: Consolas;
   width: 100%;
+  margin: 0 25% 0 25%;
 }
 body header .navbar .logo {
   display: flex;
