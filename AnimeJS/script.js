@@ -140,7 +140,7 @@ function main(){
             {scale:1, opacity:1},
         ],  
         duration:800,
-    })
+    });
     anime({
         targets:'.buttoncontainer',
         delay: 800,
@@ -149,7 +149,42 @@ function main(){
             {scale:1, opacity:1},
         ],
         duration:800,
+    });
+    anime({
+        targets:'.box1',
+        delay:300,
+        easing:'linear',
+        duration:50,
+        opacity:1,
+    });
+    anime({
+        targets:'.text1b1',
+        delay:350,
+        translateX:-250,
+        duration:250,
+    });
+    anime({
+        targets:'.text2b1',
+        delay:350,
+        translateX:250,
+        duration:250,
     })
+    anime({
+        targets:'.box1',
+        easing:'linear',
+        delay:900,
+        translateX:800,
+        duration:200,
+    })
+
+    anime({
+        targets:'.box1',
+        easing:'linear',
+        delay:900,
+        width:'15%',
+        duration:200,
+    },"-=200")
+
 }
 
 function faceover(){
