@@ -12,71 +12,85 @@
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #efe7fb;
+  height: 0.25vh;
+  border-radius: 100vw;
+  border: 0.125em solid black;
+  opacity: 0.6;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-block: 0.25em;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: green;
+  background-color: rgb(19, 18, 18);
   overflow-x: hidden;
 }
 body .container {
-  width: 100%;
-  height: 100%;
-  background-color: blue;
+  background-color: rgb(19, 18, 18);
   overflow-x: hidden;
+}
+body .container .section1 {
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
 }
 body .container section {
   display: flex;
   position: relative;
+  min-height: 100vh;
+  margin: 0 150px;
 }
 body .container section:nth-of-type(1) {
-  width: 100vw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: rgb(19, 18, 18);
   color: white;
   display: grid;
   place-items: center;
-}
-body .container section:nth-of-type(1) .boxcontainer {
-  width: 75vw;
-  height: 70%;
-  background-color: transparent;
-  position: relative;
-}
-body .container section:nth-of-type(1) .boxcontainer .box1 {
-  position: absolute;
-  width: 50%;
-  height: 25%;
-  opacity: 0;
-  background-color: white;
-  top: 25%;
-  left: 15%;
-  justify-content: center;
-  align-items: center;
-  display: grid;
-  place-items: center;
+  padding-bottom: 5%;
   overflow: hidden;
 }
-body .container section:nth-of-type(1) .boxcontainer .box1 .text1b1 {
-  position: absolute;
-  font-family: Consolas;
-  top: -60%;
-  color: black;
-  font-size: 20em;
+body .container section:nth-of-type(1) .big-heading {
+  font-size: clamp(40px, 8vw, 80px);
 }
-body .container section:nth-of-type(1) .boxcontainer .box1 .text2b1 {
-  position: absolute;
+body .container section:nth-of-type(1) h1 {
+  margin: 0px 0px 2em 4px;
+  color: var(--green);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: clamp(28px, 10vw, 32px);
+  font-weight: 400;
+}
+body .container section:nth-of-type(1) h2 {
+  margin: 0px 0px 10px;
+  font-weight: 600;
   font-family: Consolas;
-  top: 40%;
-  color: black;
-  font-size: 20em;
+  color: var(--third-colour);
+  line-height: 1.1;
+}
+body .container section:nth-of-type(1) h3 {
+  margin: 0px 0px 0.75em;
+  color: var(--slate);
+  line-height: 0.9;
+  font-family: Consolas;
+}
+body .container section:nth-of-type(1) p {
+  margin: 20px 0px 0px;
+  max-width: 540px;
 }
 body .container section:nth-of-type(2) {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
   background-color: orange;
   color: teal;
 }
@@ -114,8 +128,6 @@ body .container section:nth-of-type(2) .face .bodycenter .eyerightcenter {
   opacity: 1;
 }
 body .container section:nth-of-type(3) {
-  width: 100vw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: red;
@@ -181,17 +193,16 @@ body header {
   padding: 0rem 3em;
   width: 100%;
   height: 7em;
-  background-color: var(--main-colour);
+  background-color: transparent;
 }
 body header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: var(--main-colour);
-  font-family: Consolas;
+  font-family: "public-pixel", monospace;
   width: 100%;
-  margin: 0 25% 0 25%;
+  padding: 0 25% 0 25%;
 }
 body header .navbar .logo {
   display: flex;
@@ -206,7 +217,6 @@ body header .navbar .bodys {
   width: 3.5em;
   height: 3.5em;
   border: 0.5em solid var(--sec-colour);
-  background: var(--main-colour);
   position: relative;
   display: flex;
   opacity: 0;
@@ -254,6 +264,9 @@ body header .links ol li a {
   padding: 0 1rem 0 1rem;
   display: block;
 }
+body header .links ol li a span {
+  display: inline-block;
+}
 body header .links .buttoncontainer {
   opacity: 0;
   background-color: transparent;
@@ -270,4 +283,25 @@ body header .links .buttoncontainer {
 body header .links .buttoncontainer a {
   color: var(--sec-colour);
   text-decoration: none;
+}
+@media (max-width: 1530px) {
+  body header .navbar {
+    padding: 0 3% 0 3%;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+@media (min-width: 1530px) {
+  body header .navbar {
+    padding: 0 25% 0 25%;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+@media (max-width: 875px) {
+  body header .navbar {
+    padding: 0 25px 0 25px;
+    background-color: green;
+  }
+  body body .section {
+    margin: 0 100px;
+  }
 }/*# sourceMappingURL=main.css.map */

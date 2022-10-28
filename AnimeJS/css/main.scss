@@ -12,88 +12,97 @@
     box-sizing: border-box;
 }
 
+html::-webkit-scrollbar{
+    width: 0.3vw;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: #efe7fb;
+    height: .25vh;
+    border-radius: 100vw;
+    border: .125em solid black;
+    opacity: .6;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: transparent;
+    margin-block: .25em;
+}
+
+
+
 body{
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-color:  rgb(19, 18, 18);
     overflow-x: hidden;
     
 
     .container{
-        width: 100%;
-        height: 100%;
-        background-color: blue;
+        background-color: rgb(19, 18, 18);
         overflow-x: hidden;
-        section{
+        .section1{
             display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            }
+        
+        section{
+            display: flex;  
             position: relative;
-            
+            min-height: 100vh;
+            margin: 0 150px;
 
         &:nth-of-type(1){
-            width: 100vw;
-            height: 100vh;
             justify-content: center;
             align-items: center;
             background-color: rgb(19, 18, 18);
             color: white;
             display: grid;
             place-items: center;
-            .boxcontainer{
-                width:75vw;
-                height:70%;
-                background-color: transparent;
-                position: relative;
-
-                .box1{
-                    position: absolute;
-                    width: 50%;
-                    height: 25%;
-                    opacity: 0;
-                    background-color: white;
-                    top: 25%;
-                    left: 15%;
-                    justify-content: center;
-                    align-items: center;
-                    display: grid;
-                    place-items: center;
-                    overflow: hidden;
-                    .text1b1{
-                        position: absolute;
-                        font-family: Consolas;
-                        top: -60%;
-                        color: black;
-                        font-size: 20em;
-                    }
-                    .text2b1{
-                        position: absolute;
-                        font-family: Consolas;
-                        top: 40%;
-                        color: black;
-                        font-size: 20em;
-                    }
-
+            padding-bottom: 5%;
+            overflow: hidden;
+            
+            .big-heading{
+                font-size: clamp(40px, 8vw, 80px);
+            }
+                h1{
+                    margin: 0px 0px 2em 4px;
+                    color: var(--green);
+                    font-family:  "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+                    font-size: clamp(28px,10vw,32px);
+                    font-weight: 400;
+                
+                }
+                
+                
+                h2{
+                    margin: 0px 0px 10px;
+                    font-weight: 600;
+                    font-family:Consolas;
+                    color: var(--third-colour);
+                    line-height: 1.1;
+                }
+                
+                h3{
+                    margin: 0px 0px .75em;
+                    color: var(--slate);
+                    line-height: 0.9;
+                    font-family:Consolas;
+                }
+                p{
+                    margin: 20px 0px 0px;
+                    max-width: 540px;
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-            
         }
         &:nth-of-type(2){
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding:0;
+            background-color: orange;
+            color: teal;
             .face{
                 position:absolute;
                 top: 10%;
@@ -128,12 +137,9 @@ body{
                         }
                     }
                 }
-            background-color: orange;
-            color: teal;
+            
         }
         &:nth-of-type(3){
-            width: 100vw;
-            height: 100vh;
             justify-content: center;
             align-items: center;
             background-color: red;
@@ -211,18 +217,17 @@ body{
         padding: 0rem 3em;
         width: 100%;
         height:7em;
-        background-color:var(--main-colour);
+        background-color:transparent;
 
             .navbar{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 position:relative;
-                background-color: var(--main-colour);
-                font-family: Consolas;
+                font-family: "public-pixel", monospace;
                 width: 100%;
-                margin: 0 25% 0 25%;
-    
+                padding: 0 25% 0 25%;
+           
                 
                 .logo{ 
                     
@@ -241,7 +246,6 @@ body{
                             width: 3.5em;
                             height: 3.5em;
                             border: .5em solid var(--sec-colour);
-                            background:var(--main-colour);
                             position: relative;
                             display: flex;
                             opacity: 0;
@@ -291,7 +295,13 @@ body{
                                 color: var(--sec-colour);
                                 padding: 0 1rem 0 1rem;
                                 display: block;
+
+                                span{
+                                    display: inline-block;
+                                }
+
                             }
+                          
                         }
 
 
@@ -323,5 +333,44 @@ body{
 
     }
 
+    @media (max-width: 1530px) {
+        header{.navbar{
+                    padding: 0 3% 0 3%;
+                    transition: all 0.4s cubic-bezier(0.645,0.045,0.355,1);
+                }
+            }
+    }
+    @media (min-width: 1530px) {
+        header{.navbar{
+                    padding: 0 25% 0 25%;
+                    transition: all 0.4s cubic-bezier(0.645,0.045,0.355,1);
+                }
+            }
+    }
+    @media (max-width: 875px) {
+        header{.navbar{
+                    padding: 0 25px 0 25px;
+                    background-color: green;
+                }
+            }
 
+            body{.section{
+                        margin: 0 100px;
+                    }
+                }
+    }
+    
+    // @media (max-width: 1080px) {
+    //     body{.contianer{
+    //         padding: 0 100px;
+    //     }}
+
+    // }
+
+    // @media (max-width: 768px) {
+    //         body{.contianer{
+    //                 padding: 0 50px;
+    //             }}
+    // }
 }
+

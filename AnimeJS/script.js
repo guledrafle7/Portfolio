@@ -150,41 +150,53 @@ function main(){
         ],
         duration:800,
     });
+
+}
+
+function letter_jumpa(){
     anime({
-        targets:'.box1',
-        delay:300,
-        easing:'linear',
-        duration:50,
-        opacity:1,
-    });
-    anime({
-        targets:'.text1b1',
-        delay:350,
-        translateX:-250,
-        duration:250,
-    });
-    anime({
-        targets:'.text2b1',
-        delay:350,
-        translateX:250,
-        duration:250,
+        targets:'.links ol li a div1 span',
+        delay:anime.stagger(100),
+        keyframes:[
+            {translateY:'-10px'},
+            {translateY:'1px'},
+        ],  
+        duration:300,
     })
     anime({
-        targets:'.box1',
-        easing:'linear',
-        delay:900,
-        translateX:800,
-        duration:200,
+        targets:'.links ol li a div1 span',
+        easing: 'easeOutElastic',
+        delay:anime.stagger(100),
+        keyframe:[
+            {backgroundColor: 'red'},
+            {backgroundColor: 'yellow'},
+            {backgroundColor: 'blue'},
+            {backgroundColor: 'green'},
+        ],
+        duration:100,       
     })
-
+}
+function letter_jumpb(){
     anime({
-        targets:'.box1',
-        easing:'linear',
-        delay:900,
-        width:'15%',
-        duration:200,
-    },"-=200")
-
+        targets:'.links ol li a div2 span',
+        delay:anime.stagger(100),
+        keyframes:[
+            {translateY:'-10px'},
+            {translateY:'1px'},
+        ],  
+        duration:300,
+    })
+}
+function letter_jumpc(){
+    anime({
+        targets:'.links ol li a div3 span',
+        delay:anime.stagger(100),
+        keyframes:[
+            {translateY:'-10px'},
+            {translateY:'1px'},
+        ],  
+        duration:300,
+    })
 }
 
 function faceover(){
